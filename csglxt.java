@@ -41,8 +41,11 @@ public class csglxt {
         }
     }
     public static void addThing(ArrayList<huoList> lists){
+        Scanner in = new Scanner(System.in);
         System.out.println("添加新货物");
-        for (int i = 0;i < 1;i++){
+        System.out.println("请您输入需要添加货物的数量：");
+        int q = in.nextInt();
+        for (int i = 0;i < q;i++){
             huoList h = new huoList();
             System.out.print("\t请输入新货物的编号：");
             h.bianhao = new Scanner(System.in).nextInt();
@@ -54,21 +57,29 @@ public class csglxt {
         }
     }
     public static void deleteThing(ArrayList<huoList> lists) {
+            Scanner in = new Scanner(System.in);
             System.out.println("删除货物");
-            System.out.println("请输入您想删除的货物编号：");
-            int num = new Scanner(System.in).nextInt();
-            for (int j = 0 ;j < lists.size(); j++){
-                huoList h = lists.get(j);
-                if (h.bianhao == num){
-                    lists.remove(h);
+            System.out.println("请您输入需要删除货物的数量：");
+            int q = in.nextInt();
+            for (int i = 0;i < q;i++) {
+                System.out.println("请输入您想删除的货物编号：");
+                int num = new Scanner(System.in).nextInt();
+                for (int j = 0; j < lists.size(); j++) {
+                    huoList h = lists.get(j);
+                    if (h.bianhao == num) {
+                        lists.remove(h);
+                    }
                 }
             }
     }
     public static void changeThing(ArrayList<huoList> lists){
+        Scanner in = new Scanner(System.in);
         System.out.println("修改货物");
+        System.out.println("请您输入需要修改货物的数量：");
+        int q = in.nextInt();
         System.out.println("请输入您想修改的货物编号：");
         int num = new Scanner(System.in).nextInt();
-        for (int i = 0;i < 1;i++){
+        for (int i = 0;i < q;i++){
             huoList h = new huoList();
             System.out.print("\t请输入新的货物编号：");
             h.bianhao = new Scanner(System.in).nextInt();
